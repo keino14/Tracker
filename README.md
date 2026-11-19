@@ -3,7 +3,7 @@
 **Учебная практика · 3 курс · вариант №3**  
 Клиент-серверное веб-приложение для личного учёта привычек и ежедневных отметок.
 
-- **Студент:**Бармин Захар Викторович
+- **Студент:** Бармин Захар Викторович
 - **Группа:** ИСиП-1-9-24
 - **Тема:** трекер привычек (Привычка, Отметка)
 
@@ -21,38 +21,6 @@
 ## Стек
 
 Python 3.11+, FastAPI, Pydantic v2, SQLAlchemy 2.0, SQLite, Alembic, HTML, CSS и JavaScript без frontend-фреймворков.
-
-## Установка и запуск
-
-```bash
-# 1. Создать виртуальное окружение
-python -m venv .venv
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-# macOS / Linux
-source .venv/bin/activate
-
-# 2. Установить зависимости
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-
-# 3. Задать секретный ключ (обязательно для production)
-# Скопируйте .env.example в .env и задайте SECRET_KEY случайной строкой.
-# Пример генерации: python -c "import secrets; print(secrets.token_urlsafe(48))"
-# Приложение читает переменные окружения; .env автоматически не загружается.
-
-# PowerShell (для текущего терминала)
-$env:SECRET_KEY = (python -c "import secrets; print(secrets.token_urlsafe(48))")
-# macOS / Linux
-export SECRET_KEY="$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
-
-# 4. Создать таблицы миграцией Alembic
-alembic upgrade head
-
-# 5. Запустить сервер
-uvicorn app.main:app --reload
-```
 
 Откройте http://127.0.0.1:8000. Документация API доступна по адресу http://127.0.0.1:8000/docs.
 
